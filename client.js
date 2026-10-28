@@ -13,7 +13,7 @@
  *  - 数据通道：GET /api/dsh-session-manager/list、POST /api/dsh-session-manager/action
  */
 window.__ModuleLoader__.load({
-  id: '@local/dsh-session-manager',
+  id: '@xiaoweiq66/dsh-session-manager',
   factory(require) {
     const React = require('react')
     const h = React.createElement

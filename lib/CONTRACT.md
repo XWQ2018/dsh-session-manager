@@ -8,7 +8,7 @@
 ## 0. 常量
 
 ```
-插件包名        @local/dsh-session-manager
+插件包名        @xiaoweiq66/dsh-session-manager
 包目录          C:\dsHarness\dsh-session-manager
 侧栏面板 id     dsh-session-manager        （sidebar.panellist 的 id，也是 main 的 key）
 HTTP 前缀       /api/dsh-session-manager
@@ -273,7 +273,7 @@ export async function verifyGone(paths, sessionIds = []) → {
 
 **归属：ui-plane**（`client.js`，单个文件，CommonJS-free 的浏览器模块）。
 
-- 结构：`window.__ModuleLoader__.load({ id:'@local/dsh-session-manager', factory(require){ ... } })`。
+- 结构：`window.__ModuleLoader__.load({ id:'@xiaoweiq66/dsh-session-manager', factory(require){ ... } })`。
 - React 通过 `require('react')` 获取，禁止 `require` 任何 dsh-client-* 包。
 - 插件对象：`{ inject:['slots','locale'], apply(ctx){ ... } }`；所有注册用 `ctx.effect` 或经 `ctx.slots.inject` 包裹。
 - `sidebar.panellist`：`{ name:'sidebar.panellist', id:'dsh-session-manager', order:50, label:()=>t('open') }`。

@@ -110,7 +110,7 @@ try {
   check('bundle 被 __ModuleLoader__ 接收', false, String(error && error.message))
 }
 
-check('id 正确', captured && captured.id === '@local/dsh-session-manager', captured && captured.id)
+check('id 正确', captured && captured.id === '@xiaoweiq66/dsh-session-manager', captured && captured.id)
 
 let plugin = null
 try {

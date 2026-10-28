@@ -2,7 +2,8 @@
 
 > 给 DeepSeek Harness 的左侧栏加一个真正能用的会话管理器：搜索、筛选、归档，以及带二次确认的**物理删除**。
 
-![版本](https://img.shields.io/badge/version-1.0.0-blue)
+[![npm](https://img.shields.io/npm/v/@xiaoweiq66/dsh-session-manager)](https://www.npmjs.com/package/@xiaoweiq66/dsh-session-manager)
+[![下载量](https://img.shields.io/npm/dm/@xiaoweiq66/dsh-session-manager)](https://www.npmjs.com/package/@xiaoweiq66/dsh-session-manager)
 ![平台](https://img.shields.io/badge/platform-DSH%20Web-lightgrey)
 ![许可证](https://img.shields.io/badge/license-MIT-green)
 
@@ -75,36 +76,58 @@ DSH 自带会话列表只能看、不能清理。时间一长，磁盘上会堆�
 
 ## 安装
 
-### 方式一：插件管理器（推荐）
+### 方式一：从 npm 安装（推荐）
 
-在 DSH 会话中让 Agent 执行：
+在 DSH 的「设置 → 插件 → 添加插件」页面填入包名：
 
 ```text
-plugin_manager install_bundle，target 指向本仓库的绝对路径
+@xiaoweiq66/dsh-session-manager
 ```
 
-或在 Shell 中直接安装：
+或让 Agent 执行：
 
-```bash
-dsh plugin install /绝对路径/dsh-session-manager
+```text
+plugin_manager install_bundle，target: "@xiaoweiq66/dsh-session-manager"
 ```
 
-安装成功后：
-
-1. 左侧栏图标区（「插件管理」下方）出现「会话管理」图标；
-2. 点击即可打开面板。
-
-> **首次安装后请重启一次 DSH**。Client 半边会随页面刷新加载，但 Host 半边（HTTP 路由与数据解析）需要重启才能挂载。
-
-### 方式二：从源码安装
+也可以用命令行：
 
 ```bash
-git clone https://github.com/<your-name>/dsh-session-manager.git
+dsh plugin install @xiaoweiq66/dsh-session-manager
+```
+
+### 方式二：从 GitHub 仓库安装
+
+仓库地址直接填入「添加插件」页面：
+
+```text
+https://github.com/xiaoweiq66/dsh-session-manager
+```
+
+或：
+
+```bash
+dsh plugin install github:xiaoweiq66/dsh-session-manager
+```
+
+适合想跟进最新提交的场景。注意非官方插件没有「更新」按钮，升级需先卸载再安装。
+
+### 方式三：本地路径安装（开发用）
+
+```bash
+git clone https://github.com/xiaoweiq66/dsh-session-manager.git
 cd dsh-session-manager
 dsh plugin install "$(pwd)"
 ```
 
 本插件没有构建步骤、没有运行时依赖，克隆即可用。
+
+### 安装之后
+
+1. 左侧栏图标区（「插件管理」下方）出现「会话管理」图标；
+2. 点击即可打开面板。
+
+> **首次安装后请重启一次 DSH**。Client 半边会随页面刷新加载，但 Host 半边（HTTP 路由与数据解析）需要重启才能挂载。
 
 ## 使用
 
@@ -273,7 +296,10 @@ node tools/clean-orphan-cache.mjs --apply  # 实际删除
 
 ### 测试
 
-所有测试都是纯 Node 脚本，零依赖：
+所有测试都是纯 Node 脚本，零依赖。
+
+> npm 包只包含运行时文件（`index.js`、`client.js`、`lib/`、`locale/`、`icon.svg` 等），`tools/` 与 `verify/` 仅在源码仓库中提供。
+
 
 ```bash
 # 数据层（扫描 / 原子写 / 删除 / 复核）

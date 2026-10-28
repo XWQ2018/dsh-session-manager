@@ -3,4 +3,4 @@
 # ./client 作为浏览器半边加载（侧栏入口与面板界面）。
 - insert:
     - id: dsh-session-manager
-      name: '@local/dsh-session-manager'
+      name: '@xiaoweiq66/dsh-session-manager'
