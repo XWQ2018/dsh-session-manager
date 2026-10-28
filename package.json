@@ -1,63 +1,63 @@
 {
-  "name": "@local/dsh-session-manager",
-  "version": "1.0.0",
-  "private": false,
-  "type": "module",
-  "description": "DeepSeek Harness 侧栏「会话管理」插件：搜索、筛选、归档，以及对现有会话与归档会话执行带二次确认的物理删除。",
-  "keywords": [
-    "deepseek-harness",
-    "dsh",
-    "dsh-plugin",
-    "cordis",
-    "session",
-    "session-manager",
-    "cleanup",
-    "web-ui"
-  ],
-  "author": "<请替换为你的名字或组织>",
-  "license": "MIT",
-  "homepage": "https://github.com/<your-name>/dsh-session-manager#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/<your-name>/dsh-session-manager.git"
-  },
-  "bugs": {
-    "url": "https://github.com/<your-name>/dsh-session-manager/issues"
-  },
-  "exports": {
-    ".": "./index.js",
-    "./client": "./client.js",
-    "./locale/*.json": "./locale/*.json",
-    "./icon": "./icon.svg",
-    "./package.json": "./package.json"
-  },
-  "files": [
-    "index.js",
-    "client.js",
-    "cordis.patch.yml",
-    "locale/*.json",
-    "icon.svg",
-    "lib/*.js",
-    "lib/CONTRACT.md",
-    "README.md",
-    "LICENSE"
-  ],
-  "scripts": {
-    "test": "node tools/test-session-store.mjs && node tools/test-cache-purge.mjs && node tools/smoke-host-api.mjs && node tools/smoke-client-load.mjs && node tools/smoke-client-interaction.mjs && node tools/audit-async-paths.mjs && node tools/audit-client.mjs && node tools/check-locale.mjs",
-    "test:real": "node tools/e2e-live-delete.mjs && node tools/e2e-live-batch.mjs",
-    "diag:cache": "node tools/clean-orphan-cache.mjs"
-  },
-  "dsh": {
-    "bundle": {
-      "patch": "./cordis.patch.yml"
+    "name": "@local/dsh-session-manager",
+    "version": "1.0.0",
+    "private": false,
+    "type": "module",
+    "description": "DeepSeek Harness 侧栏「会话管理」插件：搜索、筛选、归档，以及对现有会话与归档会话执行带二次确认的物理删除。",
+    "keywords": [
+        "deepseek-harness",
+        "dsh",
+        "dsh-plugin",
+        "cordis",
+        "session",
+        "session-manager",
+        "cleanup",
+        "web-ui"
+    ],
+    "author": "xwq",
+    "license": "MIT",
+    "homepage": "https://github.com/XWQ2018/dsh-session-manager#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/XWQ2018/dsh-session-manager.git"
     },
-    "client": {
-      "platform": "web",
-      "immediately": true,
-      "inject": [
-        "@deepseek-ai/dsh-client-ui-sidebar",
-        "@deepseek-ai/dsh-client-ui-layout"
-      ]
+    "bugs": {
+        "url": "https://github.com/XWQ2018/dsh-session-manager/issues"
+    },
+    "exports": {
+        ".": "./index.js",
+        "./client": "./client.js",
+        "./locale/*.json": "./locale/*.json",
+        "./icon": "./icon.svg",
+        "./package.json": "./package.json"
+    },
+    "files": [
+        "index.js",
+        "client.js",
+        "cordis.patch.yml",
+        "locale/*.json",
+        "icon.svg",
+        "lib/*.js",
+        "lib/CONTRACT.md",
+        "README.md",
+        "LICENSE"
+    ],
+    "scripts": {
+        "test": "node tools/test-session-store.mjs && node tools/test-cache-purge.mjs && node tools/smoke-host-api.mjs && node tools/smoke-client-load.mjs && node tools/smoke-client-interaction.mjs && node tools/audit-async-paths.mjs && node tools/audit-client.mjs && node tools/check-locale.mjs",
+        "test:real": "node tools/e2e-live-delete.mjs && node tools/e2e-live-batch.mjs",
+        "diag:cache": "node tools/clean-orphan-cache.mjs"
+    },
+    "dsh": {
+        "bundle": {
+            "patch": "./cordis.patch.yml"
+        },
+        "client": {
+            "platform": "web",
+            "immediately": true,
+            "inject": [
+                "@deepseek-ai/dsh-client-ui-sidebar",
+                "@deepseek-ai/dsh-client-ui-layout"
+            ]
+        }
     }
-  }
 }
