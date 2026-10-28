@@ -101,13 +101,13 @@ dsh plugin install @xiaoweiq66/dsh-session-manager
 仓库地址直接填入「添加插件」页面：
 
 ```text
-https://github.com/xiaoweiq66/dsh-session-manager
+https://github.com/XWQ2018/dsh-session-manager
 ```
 
 或：
 
 ```bash
-dsh plugin install github:xiaoweiq66/dsh-session-manager
+dsh plugin install github:XWQ2018/dsh-session-manager
 ```
 
 适合想跟进最新提交的场景。注意非官方插件没有「更新」按钮，升级需先卸载再安装。
@@ -115,7 +115,7 @@ dsh plugin install github:xiaoweiq66/dsh-session-manager
 ### 方式三：本地路径安装（开发用）
 
 ```bash
-git clone https://github.com/xiaoweiq66/dsh-session-manager.git
+git clone https://github.com/XWQ2018/dsh-session-manager.git
 cd dsh-session-manager
 dsh plugin install "$(pwd)"
 ```

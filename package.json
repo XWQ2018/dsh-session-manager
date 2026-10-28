@@ -1,6 +1,6 @@
 {
     "name":  "@xiaoweiq66/dsh-session-manager",
-    "version":  "1.0.0",
+    "version":  "1.0.1",
     "private":  false,
     "type":  "module",
     "description":  "DeepSeek Harness 侧栏「会话管理」插件：搜索、筛选、归档，以及对现有会话与归档会话执行带二次确认的物理删除。",
@@ -16,13 +16,13 @@
                  ],
     "author":  "xiaoweiq66",
     "license":  "MIT",
-    "homepage":  "https://github.com/xiaoweiq66/dsh-session-manager#readme",
+    "homepage":  "https://github.com/XWQ2018/dsh-session-manager#readme",
     "repository":  {
                        "type":  "git",
-                       "url":  "git+https://github.com/xiaoweiq66/dsh-session-manager.git"
+                       "url":  "git+https://github.com/XWQ2018/dsh-session-manager.git"
                    },
     "bugs":  {
-                 "url":  "https://github.com/xiaoweiq66/dsh-session-manager/issues"
+                 "url":  "https://github.com/XWQ2018/dsh-session-manager/issues"
              },
     "exports":  {
                     ".":  "./index.js",
