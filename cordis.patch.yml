@@ -1,0 +1,6 @@
+# Bundle patch layer：本行把包的主入口加载为 Host 半边（普通 Cordis 插件，
+# 负责注册 HTTP 路由与归档/删除编排）；`dsh.client` 声明让 Web 应用把
+# ./client 作为浏览器半边加载（侧栏入口与面板界面）。
+- insert:
+    - id: dsh-session-manager
+      name: '@local/dsh-session-manager'

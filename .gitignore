@@ -1,0 +1,24 @@
+# 依赖
+node_modules/
+
+# 临时与调试产物
+.tmp/
+.tmpcss/
+*.tmp
+*.bak
+*.bak-*
+
+# 日志
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 测试产物
+coverage/
+dist/

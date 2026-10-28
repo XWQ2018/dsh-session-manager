@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Session Manager",
+    "description": "Manage every session from the sidebar: archive active sessions, and permanently delete existing or archived ones behind a typed confirmation."
+  }
+}
